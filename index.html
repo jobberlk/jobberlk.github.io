@@ -3,141 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lanka Gov Jobs & Gazettes</title>
+    <title>Sri Lanka Jobs & Gazettes</title>
     <style>
-        /* Modern CSS Variables & Reset */
-        :root {
-            --primary: #1e3a8a; /* Official Navy Blue */
-            --secondary: #2563eb; /* Bright Blue for buttons */
-            --bg: #f3f4f6;
-            --text: #1f2937;
-            --card-bg: #ffffff;
-        }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: var(--bg); 
-            color: var(--text); 
-            margin: 0; 
-            padding: 0; 
-        }
-
-        /* Header Layout */
-        header { 
-            background: var(--primary); 
-            color: white; 
-            padding: 15px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header h1 { margin: 0; font-size: 1.4rem; }
+        :root { --primary: #0f172a; --nav-bg: #1e293b; --accent: #2563eb; --bg: #f8fafc; --text: #334155; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
         
-        /* WhatsApp Button */
-        .wa-btn { 
-            background: #25D366; 
-            color: white; 
-            padding: 8px 16px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold; 
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        /* Horizontal Navigation Bar */
+        nav { background: var(--nav-bg); padding: 15px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 5px; transition: background 0.2s; }
+        nav a:hover { background: var(--accent); }
 
-        /* Main Content Container */
-        .container { 
-            max-width: 800px; 
-            margin: 30px auto; 
-            padding: 0 15px; 
-        }
+        /* Page Layout */
+        .container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
+        .section-header { border-bottom: 3px solid var(--accent); padding-bottom: 10px; margin-top: 40px; color: var(--primary); font-size: 1.5rem; }
 
-        /* Job Card Design */
-        .job-card { 
-            background: var(--card-bg); 
-            border-radius: 8px; 
-            padding: 20px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
-            border-left: 5px solid var(--secondary);
-        }
-        .job-title { font-size: 1.3rem; margin: 0 0 5px 0; color: var(--primary); }
-        .dept { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; font-weight: bold; }
-        
-        /* Badges for Job Details */
-        .details { display: flex; gap: 10px; font-size: 0.85rem; margin-bottom: 15px; flex-wrap: wrap; }
-        .badge { background: #e5e7eb; padding: 5px 12px; border-radius: 15px; color: #374151; font-weight: bold; }
-        .badge.urgent { background: #fee2e2; color: #991b1b; }
-
-        /* Link Shortener Button */
-        .apply-btn { 
-            display: block; 
-            text-align: center; 
-            background: var(--secondary); 
-            color: white; 
-            text-decoration: none; 
-            padding: 12px; 
-            border-radius: 6px; 
-            font-weight: bold; 
-            font-size: 1rem;
-            transition: background 0.2s;
-        }
-        .apply-btn:hover { background: var(--primary); }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) { 
-            header { flex-direction: column; gap: 15px; text-align: center; } 
-        }
+        /* Updatable Job Cards */
+        .job-card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 5px solid var(--accent); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .job-title { font-size: 1.2rem; color: var(--primary); margin: 0 0 10px 0; font-weight: bold; }
+        .job-date { font-size: 0.85rem; color: #64748b; margin-bottom: 15px; font-weight: 600; }
+        .download-btn { display: inline-block; background: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.2s; }
+        .download-btn:hover { background: #1d4ed8; }
     </style>
 </head>
-<body>
+<body id="home">
 
-    <!-- Header Section -->
-    <header>
-        <h1>🇱🇰 SL Gov Vacancies</h1>
-        <!-- Your WhatsApp Channel Link Goes Here -->
-        <a href="YOUR_WHATSAPP_CHANNEL_LINK_HERE" class="wa-btn" target="_blank">
-            💬 Join WhatsApp Group
-        </a>
-    </header>
+    <!-- Top Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#gov-jobs">Gov Jobs</a>
+        <a href="#private-jobs">Private Sector</a>
+        <a href="#gazette">Gazette</a>
+    </nav>
 
-    <!-- Job Listings Section -->
     <div class="container">
         
-        <!-- Job Card 1 -->
+        <!-- ========================================== -->
+        <!-- 1. GOV JOBS SECTION -->
+        <!-- ========================================== -->
+        <h2 class="section-header" id="gov-jobs">Latest Government Jobs</h2>
+        
+        <!-- 🟢 COPY FROM HERE DOWN TO ADD A NEW GOV JOB -->
         <div class="job-card">
-            <h2 class="job-title">Management Assistant (Grade III)</h2>
-            <div class="dept">Ministry of Health</div>
-            
-            <div class="details">
-                <span class="badge">A/L Qualified</span>
-                <span class="badge">Island-wide</span>
-                <span class="badge urgent">Closes: 25 Oct 2026</span>
-            </div>
-            
-            <p>Applications are invited for the post of Management Assistant. Please refer to the official gazette for the application format and full details.</p>
-            
-            <!-- Your Link Shortener URL Goes Here -->
-            <a href="YOUR_SHORTENED_LINK_HERE" class="apply-btn" target="_blank">Download Gazette & Apply</a>
+            <h3 class="job-title">Management Assistant - Ministry of Health</h3>
+            <div class="job-date">Posted: 25 Oct 2026</div>
+            <a href="YOUR_SHORTENED_LINK_HERE" class="download-btn" target="_blank">Download PDF Details</a>
+        </div>
+        <!-- 🔴 STOP COPYING HERE -->
+
+
+        <!-- ========================================== -->
+        <!-- 2. PRIVATE SECTOR SECTION -->
+        <!-- ========================================== -->
+        <h2 class="section-header" id="private-jobs">Private Sector Vacancies</h2>
+        
+        <div class="job-card">
+            <h3 class="job-title">Bank Trainee - Commercial Bank</h3>
+            <div class="job-date">Posted: 24 Oct 2026</div>
+            <a href="YOUR_SHORTENED_LINK_HERE" class="download-btn" target="_blank">Download PDF Details</a>
         </div>
 
-        <!-- Job Card 2 -->
+
+        <!-- ========================================== -->
+        <!-- 3. GAZETTE SECTION -->
+        <!-- ========================================== -->
+        <h2 class="section-header" id="gazette">Weekly Government Gazettes</h2>
+        
         <div class="job-card">
-            <h2 class="job-title">Teaching Assistant (English Medium)</h2>
-            <div class="dept">Department of Education - Western Province</div>
-            
-            <div class="details">
-                <span class="badge">Degree / Diploma</span>
-                <span class="badge">Western Province</span>
-                <span class="badge">Closes: 02 Nov 2026</span>
-            </div>
-            
-            <p>Recruitment for English Medium Teaching Assistants for provincial schools. Download the application form via the link below.</p>
-            
-            <!-- Your Link Shortener URL Goes Here -->
-            <a href="YOUR_SHORTENED_LINK_HERE" class="apply-btn" target="_blank">Download Gazette & Apply</a>
+            <h3 class="job-title">Government Gazette - 23 October 2026</h3>
+            <div class="job-date">Language: Sinhala / Tamil / English</div>
+            <a href="YOUR_SHORTENED_LINK_HERE" class="download-btn" target="_blank">Download Gazette</a>
         </div>
 
     </div>
