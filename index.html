@@ -3,21 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lanka Gov Jobs</title>
+    <title>Sri Lanka Gov Jobs & Gazettes</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
-        .job-card { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; padding: 10px 15px; background: #007BFF; color: white; text-decoration: none; border-radius: 5px; }
+        /* Modern CSS Variables & Reset */
+        :root {
+            --primary: #1e3a8a; /* Official Navy Blue */
+            --secondary: #2563eb; /* Bright Blue for buttons */
+            --bg: #f3f4f6;
+            --text: #1f2937;
+            --card-bg: #ffffff;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        /* Header Layout */
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 1.4rem; }
+        
+        /* WhatsApp Button */
+        .wa-btn { 
+            background: #25D366; 
+            color: white; 
+            padding: 8px 16px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Main Content Container */
+        .container { 
+            max-width: 800px; 
+            margin: 30px auto; 
+            padding: 0 15px; 
+        }
+
+        /* Job Card Design */
+        .job-card { 
+            background: var(--card-bg); 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            border-left: 5px solid var(--secondary);
+        }
+        .job-title { font-size: 1.3rem; margin: 0 0 5px 0; color: var(--primary); }
+        .dept { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; font-weight: bold; }
+        
+        /* Badges for Job Details */
+        .details { display: flex; gap: 10px; font-size: 0.85rem; margin-bottom: 15px; flex-wrap: wrap; }
+        .badge { background: #e5e7eb; padding: 5px 12px; border-radius: 15px; color: #374151; font-weight: bold; }
+        .badge.urgent { background: #fee2e2; color: #991b1b; }
+
+        /* Link Shortener Button */
+        .apply-btn { 
+            display: block; 
+            text-align: center; 
+            background: var(--secondary); 
+            color: white; 
+            text-decoration: none; 
+            padding: 12px; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .apply-btn:hover { background: var(--primary); }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) { 
+            header { flex-direction: column; gap: 15px; text-align: center; } 
+        }
     </style>
 </head>
 <body>
-    <h1>Latest Government Jobs & Gazettes</h1>
-    
-    <div class="job-card">
-        <h2>Management Assistant - Ministry of Health</h2>
-        <p><strong>Closing Date:</strong> 25 Oct 2026</p>
-        <p>Requires passes in GCE A/L. See the full gazette for details.</p>
-        <a href="YOUR_SHORTENED_LINK_HERE" class="btn" target="_blank">Download Details</a>
+
+    <!-- Header Section -->
+    <header>
+        <h1>🇱🇰 SL Gov Vacancies</h1>
+        <!-- Your WhatsApp Channel Link Goes Here -->
+        <a href="YOUR_WHATSAPP_CHANNEL_LINK_HERE" class="wa-btn" target="_blank">
+            💬 Join WhatsApp Group
+        </a>
+    </header>
+
+    <!-- Job Listings Section -->
+    <div class="container">
+        
+        <!-- Job Card 1 -->
+        <div class="job-card">
+            <h2 class="job-title">Management Assistant (Grade III)</h2>
+            <div class="dept">Ministry of Health</div>
+            
+            <div class="details">
+                <span class="badge">A/L Qualified</span>
+                <span class="badge">Island-wide</span>
+                <span class="badge urgent">Closes: 25 Oct 2026</span>
+            </div>
+            
+            <p>Applications are invited for the post of Management Assistant. Please refer to the official gazette for the application format and full details.</p>
+            
+            <!-- Your Link Shortener URL Goes Here -->
+            <a href="YOUR_SHORTENED_LINK_HERE" class="apply-btn" target="_blank">Download Gazette & Apply</a>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="job-card">
+            <h2 class="job-title">Teaching Assistant (English Medium)</h2>
+            <div class="dept">Department of Education - Western Province</div>
+            
+            <div class="details">
+                <span class="badge">Degree / Diploma</span>
+                <span class="badge">Western Province</span>
+                <span class="badge">Closes: 02 Nov 2026</span>
+            </div>
+            
+            <p>Recruitment for English Medium Teaching Assistants for provincial schools. Download the application form via the link below.</p>
+            
+            <!-- Your Link Shortener URL Goes Here -->
+            <a href="YOUR_SHORTENED_LINK_HERE" class="apply-btn" target="_blank">Download Gazette & Apply</a>
+        </div>
+
     </div>
+
 </body>
 </html>
