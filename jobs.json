@@ -1,0 +1,48 @@
+{
+  "site": {
+    "whatsapp": "PASTE_YOUR_WHATSAPP_CHANNEL_LINK_HERE",
+    "telegram": "PASTE_YOUR_TELEGRAM_CHANNEL_LINK_HERE"
+  },
+  "jobs": [
+    {
+      "id": 4,
+      "category": "gov",
+      "title": "National Housing Development Authority – 129 Vacancies",
+      "org": "National Housing Development Authority",
+      "vacancies": 129,
+      "added": "2026-11-03",
+      "closing": "2026-11-08",
+      "pdf": "pdfs/nhda-129-vacancies.pdf",
+      "link": "https://exe.io/Ps9jf"
+    },
+    {
+      "id": 3,
+      "category": "gov",
+      "title": "Management Assistant – Ministry of Health",
+      "org": "Ministry of Health",
+      "added": "2026-10-24",
+      "closing": "2026-10-25",
+      "pdf": "pdfs/ministry-of-health-management-assistant.pdf",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "category": "private",
+      "title": "Bank Trainee – Commercial Bank",
+      "org": "Commercial Bank",
+      "added": "2026-10-23",
+      "closing": "2026-10-24",
+      "pdf": "pdfs/commercial-bank-trainee.pdf",
+      "link": "https://exe.io/Wz6ix"
+    },
+    {
+      "id": 1,
+      "category": "gazette",
+      "title": "Government Gazette – 23 October 2026",
+      "language": "Sinhala / Tamil / English",
+      "added": "2026-10-23",
+      "pdf": "pdfs/gazette-2026-10-23.pdf",
+      "link": ""
+    }
+  ]
+}

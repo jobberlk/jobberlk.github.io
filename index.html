@@ -1,165 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lanka Jobs & Gazettes</title>
-    <style>
-        :root { --primary: #0f172a; --nav-bg: #1e293b; --accent: #2563eb; --bg: #f8fafc; --text: #334155; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
-        
-        /* Navigation Bar */
-        nav { background: var(--nav-bg); padding: 15px 20px; position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        nav button { background: none; border: none; color: white; font-size: 1rem; font-weight: 600; padding: 8px 16px; border-radius: 5px; cursor: pointer; transition: background 0.2s; }
-        nav button:hover, nav button.active { background: var(--accent); }
-
-        /* Page Layout */
-        .container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
-        
-        /* This hides sections that aren't clicked */
-        .page-section { display: none; }
-        .page-section.active { display: block; }
-        
-        .section-header { border-bottom: 3px solid var(--accent); padding-bottom: 10px; color: var(--primary); font-size: 1.5rem; }
-
-        /* Social Buttons */
-        .social-links { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .wa-btn { background: #25D366; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; flex: 1; text-align: center; }
-        .tg-btn { background: #0088cc; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; flex: 1; text-align: center; }
-
-        /* Job Cards */
-        .job-card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 5px solid var(--accent); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .job-title { font-size: 1.2rem; color: var(--primary); margin: 0 0 10px 0; font-weight: bold; }
-        .job-date { font-size: 0.85rem; color: #64748b; margin-bottom: 15px; font-weight: 600; }
-        /* target="_blank" ensures PDFs open properly on all mobile devices */
-        .download-btn { display: inline-block; background: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.2s; }
-        .download-btn:hover { background: #1d4ed8; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobberLK – Sri Lanka Government Jobs, Private Jobs &amp; Gazettes</title>
+<meta name="description" content="Latest Sri Lankan government jobs, private sector vacancies and government gazettes. Free PDF downloads, updated daily.">
+<meta property="og:title" content="JobberLK – Sri Lanka Jobs &amp; Gazettes">
+<meta property="og:description" content="Latest government jobs, private vacancies and gazettes in Sri Lanka. Free PDF downloads.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b5d4f">
+<style>
+:root{--bg:#f4f6f7;--card:#fff;--ink:#16222c;--mute:#5d6b76;--line:#dfe5e9;--brand:#0b5d4f;--on:#fff;--new:#f2a900;--warn:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#10171c;--card:#182229;--ink:#e8eef2;--mute:#9aa8b2;--line:#27343d;--brand:#3fb89f;--on:#07261f;--new:#f2b933;--warn:#ff8a80}}
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Segoe UI","Nirmala UI","Iskoola Pota",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--new);outline-offset:2px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+header{background:var(--brand);color:var(--on);padding:28px 0 22px}
+header h1{margin:0;font-size:1.9rem;letter-spacing:-.02em}
+header p{margin:6px 0 16px;opacity:.9}
+.chan{display:flex;flex-wrap:wrap;gap:10px}
+.chan a{background:var(--on);color:var(--brand);text-decoration:none;font-weight:600;padding:8px 14px;border-radius:8px}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 10px;border-bottom:1px solid var(--line)}
+input[type=search]{width:100%;padding:11px 14px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
+.tabs button{flex:none;font:inherit;font-weight:600;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.tabs button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--on)}
+.opt{display:flex;align-items:center;gap:8px;margin-top:10px;color:var(--mute);font-size:.92rem}
+main{padding:16px 0 40px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px 16px;justify-content:space-between;align-items:center}
+.job.closed{opacity:.6}
+.info{flex:1 1 320px;min-width:0}
+.job h2{margin:0 0 4px;font-size:1.08rem;line-height:1.35}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--mute);font-size:.9rem}
+.meta .warn{color:var(--warn);font-weight:600}
+.new{background:var(--new);color:#2b1d00;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:middle}
+.act{display:flex;flex-wrap:wrap;gap:8px}
+.btn{text-decoration:none;font-weight:600;font-size:.92rem;padding:9px 14px;border-radius:8px;border:1px solid var(--brand);color:var(--brand)}
+.btn.main{background:var(--brand);color:var(--on)}
+.msg{text-align:center;color:var(--mute);padding:40px 0}
+footer{border-top:1px solid var(--line);padding:18px 0 30px;color:var(--mute);font-size:.88rem}
+@media(max-width:520px){.act{width:100%}.act .btn{flex:1;text-align:center}}
+</style>
 </head>
 <body>
+<header><div class="wrap">
+  <h1>JobberLK</h1>
+  <p>Sri Lanka government jobs, private vacancies and gazettes. Newest first.</p>
+  <div class="chan" id="chan"></div>
+</div></header>
 
-    <!-- Top Navigation Bar -->
-    <nav>
-        <button onclick="showSection('home')" id="btn-home" class="active">Homepage</button>
-        <button onclick="showSection('gov')" id="btn-gov">Gov Jobs</button>
-        <button onclick="showSection('private')" id="btn-private">Private Jobs</button>
-        <button onclick="showSection('gazette')" id="btn-gazette">Gazette</button>
-    </nav>
+<div class="tools"><div class="wrap">
+  <input type="search" id="q" placeholder="Search jobs, e.g. bank, ministry, 2026" aria-label="Search jobs">
+  <div class="tabs" id="tabs" role="group" aria-label="Category"></div>
+  <label class="opt"><input type="checkbox" id="closed"> Show closed vacancies</label>
+</div></div>
 
-    <div class="container">
-        
-        <!-- ========================================== -->
-        <!-- 1. HOMEPAGE SECTION -->
-        <!-- ========================================== -->
-        <div id="home" class="page-section active">
-            
-            <div class="social-links">
-                <a href="YOUR_WHATSAPP_LINK" class="wa-btn" target="_blank">💬 Join WhatsApp Channel</a>
-                <a href="YOUR_TELEGRAM_LINK" class="tg-btn" target="_blank">✈️ Join Telegram Channel</a>
-            </div>
+<main class="wrap" id="list" aria-live="polite"><p class="msg">Loading…</p></main>
 
-            <h2 class="section-header">Recently Uploaded (All Categories)</h2>
-            
-            <!-- 🟢 TO UPDATE HOME: Paste the newest job cards here so people see them immediately -->
-            <div class="job-card">
-                <h3 class="job-title">Management Assistant - Ministry of Health</h3>
-                <div class="job-date">Added: Today</div>
-                <a href="YOUR_SHORTENED_LINK" class="download-btn" target="_blank">Download PDF</a>
-            </div>
-            <!-- 🔴 END OF HOME UPDATES -->
+<footer><div class="wrap">
+  JobberLK is an independent site and is not linked to any government body. Always confirm details in the official notice before applying.
+</div></footer>
 
-        </div>
+<script>
+const CATS={all:'All',gov:'Government Jobs',private:'Private Jobs',gazette:'Gazettes'};
+const $=s=>document.querySelector(s);
+let S={},J=[],tab='all',q='',showClosed=false;
 
+const today=()=>{const d=new Date();d.setHours(0,0,0,0);return d};
+const dt=s=>new Date(s+'T00:00:00');
+const fmt=s=>dt(s).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const real=u=>u&&!/YOUR_/i.test(u);
 
-        <!-- ========================================== -->
-        <!-- 2. GOV JOBS SECTION -->
-        <!-- ========================================== -->
-        <div id="gov" class="page-section">
-            <h2 class="section-header">Government Jobs</h2>
-            
-            <!-- 🟢 TO UPDATE GOV JOBS: Copy from here... -->
+function status(j){
+  if(!j.closing)return{t:'',closed:false};
+  const d=Math.round((dt(j.closing)-today())/864e5);
+  if(d<0)return{t:'Closed '+fmt(j.closing),closed:true};
+  if(d===0)return{t:'Closes today',warn:true};
+  if(d<=3)return{t:`Closes in ${d} day${d>1?'s':''}`,warn:true};
+  return{t:'Closes '+fmt(j.closing)};
+}
+const isNew=j=>(today()-dt(j.added))/864e5<=2;
 
-
-            <div class="job-card">
-                <h3 class="job-title">National Housing Developmet Authority - 129 Vacancies</h3>
-                <div class="job-date">Closing Date: 08 Nov 2026</div>
-                <a href="https://exe.io/Ps9jf" class="download-btn" target="_blank">Download PDF</a>
-            </div>
-
-            <div class="job-card">
-                <h3 class="job-title">National Housing Developmet Authority - 129 Vacancies</h3>
-                <div class="job-date">Closing Date: 08 Nov 2026</div>
-                <a href="https://exe.io/Ps9jf" class="download-btn" target="_blank">Download PDF</a>
-            </div>
-
-
-            <div class="job-card">
-                <h3 class="job-title">Management Assistant - Ministry of Health</h3>
-                <div class="job-date">Closing Date: 25 Oct 2026</div>
-                <a href="YOUR_SHORTENED_LINK_HERE" class="download-btn" target="_blank">Download PDF</a>
-            </div>
-
-            
-
-            <!-- 🔴 ...to here. Paste NEW jobs directly above this line so they appear at the top. -->
-
-        </div>
-
-
-        <!-- ========================================== -->
-        <!-- 3. PRIVATE SECTOR SECTION -->
-        <!-- ========================================== -->
-        <div id="private" class="page-section">
-            <h2 class="section-header">Private Sector Jobs</h2>
-            
-            <!-- 🟢 TO UPDATE PRIVATE JOBS: Copy from here... -->
-            <div class="job-card">
-                <h3 class="job-title">Bank Trainee - Commercial Bank</h3>
-                <div class="job-date">Closing Date: 24 Oct 2026</div>
-                <a href=https://exe.io/Wz6ix class="download-btn" target="_blank">Download PDF</a>
-            </div>
-            <!-- 🔴 ...to here. Paste NEW jobs directly above this line. -->
-
-        </div>
-
-
-        <!-- ========================================== -->
-        <!-- 4. GAZETTE SECTION -->
-        <!-- ========================================== -->
-        <div id="gazette" class="page-section">
-            <h2 class="section-header">Government Gazettes</h2>
-            
-            <!-- 🟢 TO UPDATE GAZETTES: Copy from here... -->
-            <div class="job-card">
-                <h3 class="job-title">Government Gazette - 23 October 2026</h3>
-                <div class="job-date">Language: Sinhala / Tamil / English</div>
-                <a href="YOUR_SHORTENED_LINK_HERE" class="download-btn" target="_blank">Download PDF</a>
-            </div>
-            <!-- 🔴 ...to here. Paste NEW gazettes directly above this line. -->
-
-        </div>
-
+function card(j){
+  const s=status(j),href=real(j.link)?j.link:j.pdf;
+  const share='https://wa.me/?text='+encodeURIComponent(j.title+' – '+location.href.split('#')[0]);
+  return `<article class="job${s.closed?' closed':''}">
+    <div class="info">
+      <h2>${isNew(j)&&!s.closed?'<span class="new">NEW</span>':''}${esc(j.title)}</h2>
+      <div class="meta">
+        ${j.vacancies?`<span>${esc(j.vacancies)} vacancies</span>`:''}
+        ${j.language?`<span>${esc(j.language)}</span>`:''}
+        ${s.t?`<span class="${s.warn?'warn':''}">${esc(s.t)}</span>`:''}
+        <span>Added ${fmt(j.added)}</span>
+      </div>
     </div>
+    <div class="act">
+      ${j.pdf?`<a class="btn" href="${esc(j.pdf)}" target="_blank" rel="noopener">Preview</a>`:''}
+      ${href?`<a class="btn main" href="${esc(href)}" target="_blank" rel="noopener">Download PDF</a>`:''}
+      <a class="btn" href="${share}" target="_blank" rel="noopener">Share</a>
+    </div>
+  </article>`;
+}
 
-    <!-- JavaScript to handle the menu clicking -->
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remove 'active' color from all buttons
-            document.querySelectorAll('nav button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show the clicked section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Highlight the clicked button
-            document.getElementById('btn-' + sectionId).classList.add('active');
-        }
-    </script>
+function render(){
+  const list=J.filter(j=>(tab==='all'||j.category===tab)
+      &&(showClosed||!status(j).closed)
+      &&`${j.title} ${j.org||''}`.toLowerCase().includes(q))
+    .sort((a,b)=>b.added.localeCompare(a.added)||(b.id||0)-(a.id||0));
+  $('#list').innerHTML=list.length?list.map(card).join(''):
+    '<p class="msg">No vacancies match. Clear the search, or tick “Show closed vacancies”.</p>';
+  $('#tabs').innerHTML=Object.entries(CATS).map(([k,v])=>`<button data-k="${k}" aria-pressed="${k===tab}">${v}</button>`).join('');
+}
+
+$('#tabs').addEventListener('click',e=>{const k=e.target.dataset.k;if(k){tab=k;render()}});
+$('#q').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render()});
+$('#closed').addEventListener('change',e=>{showClosed=e.target.checked;render()});
+
+fetch('jobs.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+  S=d.site||{};J=d.jobs||[];
+  $('#chan').innerHTML=
+    (real(S.whatsapp)?`<a href="${esc(S.whatsapp)}" target="_blank" rel="noopener">Join WhatsApp channel</a>`:'')+
+    (real(S.telegram)?`<a href="${esc(S.telegram)}" target="_blank" rel="noopener">Join Telegram channel</a>`:'');
+  render();
+}).catch(()=>{$('#list').innerHTML='<p class="msg">Could not load jobs.json. If you opened this file directly, run it with VS Code Live Server or deploy it to GitHub Pages.</p>'});
+</script>
 </body>
 </html>
