@@ -4,6 +4,17 @@
     "telegram": "https://t.me/yourchannelname"
   },
   "jobs": [
+      {
+  "id": 5,
+  "category": "gov",
+  "title": "Non Academic vacancies-University of Sri Jayawardhanapura",
+  "org": "University Of sri Jayawardhanapura",
+  "added": "2026-11-01",
+  "closing": "2026-11-14",
+  "pdf": "pdfs/Technical-Officer-Security-Officer-Welder-Public-Health-Inspector-Craft-Demonstrator-USJ.pdfpdfs/Technical-Officer-Security-Officer-Welder-Public-Health-Inspector-Craft-Demonstrator-USJ.pdf",
+  "link": "77"
+},
+
     {
       "id": 4,
       "category": "gov",
